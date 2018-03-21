@@ -1,0 +1,33 @@
+<head>
+    <title>testapp</title>
+  </head>
+
+  <body>
+    <h1>Welcome to Meteor!</h1>
+  
+
+    
+    {{> add}}
+
+    {{#each tasks}}
+
+    {{> text}}
+    {{/each}}
+
+  </body>
+  
+  <template name="add">
+    
+        <form >
+
+               Enter Text: <input type="text" name="text" class="add_text">
+               <button class="submit">submit</button>
+            </form>
+  </template>
+  
+  <template name="text">
+
+    {{name}}
+    
+  </template>
+  
