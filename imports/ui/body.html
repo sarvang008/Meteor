@@ -8,6 +8,8 @@
 
     {{> loginButtons}}
     
+
+    {{#if currentUser}}
     {{> add}}
 
     <ul>
@@ -16,7 +18,7 @@
         
     {{/each}} 
     </ul>
-
+    {{/if}}
   </body>
   
   
