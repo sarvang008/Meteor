@@ -2,13 +2,13 @@
 import { Template } from 'meteor/templating';
 
 import './body.html';
-
 import {books} from '../api/prod.js';
+
 
 
 Template.add.events({
 
-'submit .submit':function(event){
+'submit.submit':function(event){
 
     var data=$('.add_text').val();
     console.log(data);
@@ -17,6 +17,11 @@ Template.add.events({
 
     //console.log(books.find());
     
+    books.insert({
+              name:data
+
+    }
+);
 
    
 
