@@ -6,15 +6,19 @@
     <h1>Welcome to Meteor!</h1>
   
 
+    {{> loginButtons}}
     
     {{> add}}
 
+    <ul>
     {{#each tasks}}
-
-    {{> text}}
-    {{/each}}
+        {{>todo}} 
+        
+    {{/each}} 
+    </ul>
 
   </body>
+  
   
   <template name="add">
     
@@ -25,9 +29,10 @@
             </form>
   </template>
   
-  <template name="text">
+  <template name="todo">
 
-    {{name}}
+      <li> {{name}} <button class="remove_item">X</button></li>
+    
     
   </template>
   
