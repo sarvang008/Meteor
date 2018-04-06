@@ -1,16 +1,55 @@
 <head>
     <title>testapp</title>
+  
+    
   </head>
 
-  <body>
-    <h1>Welcome to Meteor!</h1>
-  
 
-    {{> loginButtons}}
+  <body>
+      <style>
+          #head{
+          margin:auto;
+          border:1px solid black;
+          padding:50px;
+          height: 550px;
+          width:330px;
+          background-color: #456789;
+          color:#ffffff;
+          border-radius:30px;
+          margin-top:50px;
+          }
+          
+          .remove_item{
+          position: absolute;
+          left:1000px;
+          }
+          li
+          {
+            margin: 5px;
+          }
+            </style>
+     {{> loginButtons}} 
+
+    <br>
+    <br>
+    <br>
+  
+  <div id="head">
+   
     
 
     {{#if currentUser}}
+
+        <form >
+     Enter Text: <input type="text" name="text" class="add_text">
+     <br><br>
+     
+    Enter Age: <input type="text" name="text" class="update_age">
+    <br><br>
     {{> add}}
+
+    {{> update}}
+    </form>
 
     <ul>
     {{#each tasks}}
@@ -19,21 +58,29 @@
     {{/each}} 
     </ul>
     {{/if}}
+  </div>
   </body>
   
   
   <template name="add">
     
-        <form >
 
-               Enter Text: <input type="text" name="text" class="add_text">
+              
                <button class="submit">submit</button>
-            </form>
+            
+  </template>
+
+  <template name="update">
+    
+
+              
+               <button class="btnupdate">Update</button>
+            
   </template>
   
   <template name="todo">
 
-      <li> {{name}} <button class="remove_item">X</button></li>
+      <li> {{name}} age is {{age}}<button class="remove_item">X</button></li>
     
     
   </template>
