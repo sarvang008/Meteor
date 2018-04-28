@@ -37,7 +37,8 @@ Template.update.events({
     });
 */
       var name=$('.add_text').val();
-      var age1=$('.update_age').val();
+      var mob1=$('.add_no').val();
+      var email=$('.add_email').val();
       
       var doc= books.findOne({name:name});
    //  console.log(doc._id);
@@ -48,8 +49,10 @@ Template.update.events({
         }
          
 
-     else if(doc!=""&&(age1!=""&&name!="")){
-      books.update({_id:doc._id},{$set:{age:age1}});
+     else if(doc!=""&&(mob1!=""&&name!=""&&email!="")){
+      books.update({_id:doc._id},{$set:{mob:mob1}});
+      books.update({_id:doc._id},{$set:{email:email}});
+      
       console.log('updated');
       }
       else
@@ -57,8 +60,8 @@ Template.update.events({
           alert(" feilds empty");
       }
       $('.add_text').val("");
-      $('.update_age').val("");
-      
+      $('.add_no').val("");
+      $('.add_email').val("");
       
 return false;
     }
@@ -72,17 +75,19 @@ Template.add.events({
 'click.submit':function(event){
 
     var data=$('.add_text').val();
-    var age1=$('.update_age').val();
+    var mob1=$('.add_no').val();
+    var email=$('.add_email').val();
     console.log(data);
     
  
 
     //console.log(books.find());
     
-    if(data!=""&&age1!="")
+    if(data!=""&&mob1!=""&&email!="")
     books.insert({
               name:data,
-              age:age1
+              mob:mob1,
+              email:email
 
 
     }
@@ -97,8 +102,8 @@ else
 
 //event.target.text.value="";
 $('.add_text').val("");
-
-$('.update_age').val("");
+$('.add_email').val("");
+$('.add_no').val("");
 
     return false;
 }

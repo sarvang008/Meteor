@@ -11,8 +11,9 @@
           margin:auto;
           border:1px solid black;
           padding:50px;
+         
           height: auto;
-          width:auto;
+          width:1080px;
           background-color: #456789;
           color:#ffffff;
         
@@ -21,14 +22,15 @@
           .submit{
             background-color: chartreuse;
             border-radius: 4px;
-            text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+            text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.2);
             border: none;
-             color: rgb(12, 86, 104);
+             color:black;
            padding: 12px 20px;
            text-align: center;
            text-decoration: none;
             display: inline-block;
-            font-size: 12px;
+            font-size: 14px;
+            font-weight: bold;
           }
         
           input {
@@ -50,19 +52,22 @@
           {
             background-color: chartreuse;
             border-radius: 4px;
-            text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+            text-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
             border: none;
             color: rgb(12, 86, 104);
            padding: 12px 20px;
            text-align: center;
            text-decoration: none;
+           color:black;
             display: inline-block;
-            font-size: 12px;
+           
             margin-left: 10px;
+            font-size: 14px;
+            font-weight: bold;
           }
           table{
             height: 40px;
-            width:95%;
+            
             color :black;
             padding: 10px;
             margin: 10px;
@@ -73,15 +78,19 @@
           }
           th,td
           {
-            border: 1px solid black;
-            text-align: left;
-            width: 50px;
+        
+            text-align:center;
+            width: 450px;
+          }
+          th{
+            color: gray;
           }
           .remove_item{
         background-color: rgb(229, 9, 9);
         color: white;
             float: right;
             margin-top: -15px;
+            margin-right: 20px;
             height: 25px;
             width: 25px;
             text-decoration: none;
@@ -96,10 +105,10 @@
           }
             </style>
      {{> loginButtons}} 
-
-    <br>
-    <br>
-    <br>
+          <center> <h1>Contact Information</h1></center> 
+   
+   
+    
   
   <div >
    
@@ -109,9 +118,12 @@
       <div id="head">
         <form >
      Enter Name: <input type="text" name="text" class="add_text">
-     <br><br>
+     Enter Email: <input type="text" name="text" class="add_email">
      
-    Enter Age: <input type="text" name="text" class="update_age">
+     
+    Enter Mobile: <input type="text" name="text" class="add_no">
+ 
+     
     
     <br><br>
     {{> add}}
@@ -137,7 +149,7 @@
     
 
               
-               <button class="submit">submit</button>
+               <button class="submit">Submit</button>
             
   </template>
 
@@ -151,7 +163,7 @@
   
   <template name="todo">
       
-       <table><tr><th>Name</th><th>Age</th><th>no</th></tr>  <tr><td>{{name}} </td> <td>{{age}} </td> <td><form><button type="submit" class="remove_item">X</button></form></td></tr></table>
+       <table><tr><th>Name</th><th>Email</th><th>Mobile</th></tr>  <tr><td>{{name}} </td><td>{{email}} </td><td>{{mob}} </td> <td><form><button type="submit" class="remove_item">X</button></form></td></tr></table>
     
     
   </template>
