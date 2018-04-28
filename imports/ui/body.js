@@ -6,10 +6,12 @@ import {books} from '../api/prod.js';
 
 Template.todo.events({
 
-    'click.remove_item':function(){
+    'submit.remove_item':function(){
 
         books.remove(this._id);
 
+
+        return false;
     }
 
 
@@ -36,15 +38,23 @@ Template.update.events({
 */
       var name=$('.add_text').val();
       var age1=$('.update_age').val();
+      
       var doc= books.findOne({name:name});
-     // console.log(doc._id);
-      if(doc!=""&&age1!=""&&name!=""){
+   //  console.log(doc._id);
+
+        if(doc==null)
+        {
+            alert('name not found or Fields Empty');
+        }
+         
+
+     else if(doc!=""&&(age1!=""&&name!="")){
       books.update({_id:doc._id},{$set:{age:age1}});
       console.log('updated');
       }
       else
       {
-          alert("name not found or feilds empty");
+          alert(" feilds empty");
       }
       $('.add_text').val("");
       $('.update_age').val("");

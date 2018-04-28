@@ -11,20 +11,87 @@
           margin:auto;
           border:1px solid black;
           padding:50px;
-          height: 550px;
-          width:330px;
+          height: auto;
+          width:auto;
           background-color: #456789;
           color:#ffffff;
-          border-radius:30px;
+        
           margin-top:50px;
           }
-          
+          .submit{
+            background-color: chartreuse;
+            border-radius: 4px;
+            text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+            border: none;
+             color: rgb(12, 86, 104);
+           padding: 12px 20px;
+           text-align: center;
+           text-decoration: none;
+            display: inline-block;
+            font-size: 12px;
+          }
+        
+          input {
+  background: rgba(0,0,0,0.2);
+  display: block;
+  height: 40px;
+  width: 40%;
+  margin: 10px 0;
+  padding: 0 5px;
+  color:white;
+  border-width: 0;
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  
+}
+          .btnupdate
+          {
+            background-color: chartreuse;
+            border-radius: 4px;
+            text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+            border: none;
+            color: rgb(12, 86, 104);
+           padding: 12px 20px;
+           text-align: center;
+           text-decoration: none;
+            display: inline-block;
+            font-size: 12px;
+            margin-left: 10px;
+          }
+          table{
+            height: 40px;
+            width:95%;
+            color :black;
+            padding: 10px;
+            margin: 10px;
+            font:22px bolder;
+           
+           
+            background-color: floralwhite;
+          }
+          th,td
+          {
+            border: 1px solid black;
+            text-align: left;
+            width: 50px;
+          }
           .remove_item{
-          position: absolute;
-          left:1000px;
+        background-color: rgb(229, 9, 9);
+        color: white;
+            float: right;
+            margin-top: -15px;
+            height: 25px;
+            width: 25px;
+            text-decoration: none;
+            
+           border: 1px solid black;
           }
           li
           {
+            list-style: none;
+          
             margin: 5px;
           }
             </style>
@@ -34,22 +101,26 @@
     <br>
     <br>
   
-  <div id="head">
+  <div >
    
     
 
     {{#if currentUser}}
-
+      <div id="head">
         <form >
-     Enter Text: <input type="text" name="text" class="add_text">
+     Enter Name: <input type="text" name="text" class="add_text">
      <br><br>
      
     Enter Age: <input type="text" name="text" class="update_age">
+    
     <br><br>
     {{> add}}
 
     {{> update}}
-    </form>
+    <br>
+  </form>
+  </div>
+  
 
     <ul>
     {{#each tasks}}
@@ -79,8 +150,8 @@
   </template>
   
   <template name="todo">
-
-      <li> {{name}} age is {{age}}<button class="remove_item">X</button></li>
+      
+       <table><tr><th>Name</th><th>Age</th><th>no</th></tr>  <tr><td>{{name}} </td> <td>{{age}} </td> <td><form><button type="submit" class="remove_item">X</button></form></td></tr></table>
     
     
   </template>

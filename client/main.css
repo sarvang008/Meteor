@@ -1,3 +1,44 @@
 /* CSS declarations go here */
+li{
 
+    color:black;
+    
+    font-size: 15px; font-family: 'Comic Sans MS'; }
+    
+    p{
+    
+    color:black;
+    font-size: 25px;
+    font-family: 'Vijaya';
+    
+    }
+    body{
+
+        background-color: rgb(108, 154, 193);
+
+    }
+   
+    
+    
+    
+    
+    header {
+    
+    padding: 1em;
+    color: white;
+    
+    background-color:rgb(12, 2, 39);
+    clear: left;
+    
+    text-align: center;
+    }
+    
+    article {
+    margin-left: 170px;
+    
+    padding: 1em;
+    
+    overflow: hidden;
+    }
+    
 
